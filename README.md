@@ -33,6 +33,7 @@ services:
    volumes:
     - some-volume:/home/user/
     - /home/ftp/logs/:/var/log/
+    - ./vsftpd.user_list:/etc/vsftpd.user_list
    environment:
     - FTP_USER=user
     - FTP_PASS=my-password
