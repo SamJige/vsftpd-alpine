@@ -1,8 +1,12 @@
 # vsftpd-alpine
-Docker image of vsftpd server based on Alpine 3.4 
 
-##Exemple usage
-```
+Docker image of vsftpd server based on Alpine 3.4
+
+Only user in `/etc/vsftpd.user_list` is permitted to login
+
+## Exemple usage
+
+``` shell
 docker run \
   --name vsftpd \
   -d \
@@ -16,8 +20,9 @@ docker run \
   avenus/vsftpd-alpine
 ```
 
-##Exemple usage in compose file
-```
+## Exemple usage in compose file
+
+``` shell
 version: '3'
 services:
   ftp:

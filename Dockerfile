@@ -1,6 +1,6 @@
 FROM alpine:3.4
 
-MAINTAINER avenus.pl
+# MAINTAINER avenus.pl modified by samjige
 
 ENV FTP_USER=foo \
     FTP_PASS=foo123 \
@@ -24,6 +24,9 @@ RUN echo "local_enable=YES" >> /etc/vsftpd/vsftpd.conf \
   && echo "pasv_enable=Yes" >> /etc/vsftpd/vsftpd.conf \
   && echo "listen_ipv6=NO" >> /etc/vsftpd/vsftpd.conf \
   && echo "seccomp_sandbox=NO" >> /etc/vsftpd/vsftpd.conf \
+  && echo "userlist_enable=YES" >> /etc/vsftpd/vsftpd.conf \
+  && echo "userlist_deny=NO" >> /etc/vsftpd/vsftpd.conf \
+  && echo "userlist_file=/etc/vsftpd.user_list" >> /etc/vsftpd/vsftpd.conf \
   && sed -i "s/anonymous_enable=YES/anonymous_enable=NO/" /etc/vsftpd/vsftpd.conf
 
 
